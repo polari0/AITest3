@@ -1,0 +1,94 @@
+{
+    "name": "MapControlls",
+    "maps": [
+        {
+            "name": "MapControlls",
+            "id": "09ac5757-9549-4586-b5a6-cf2f3c7a7855",
+            "actions": [
+                {
+                    "name": "Change Platform Oriantation Up",
+                    "type": "Button",
+                    "id": "60899691-94f0-471b-be31-ac1e074eda25",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Change Platform Oriantation Down",
+                    "type": "Button",
+                    "id": "bf89d20f-a40c-42f3-a705-1cad237663ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Change Platform Oriantation Left",
+                    "type": "Button",
+                    "id": "32f06ecd-4ce8-464e-acee-660401ca22e0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Change Platform Oriantation Right",
+                    "type": "Button",
+                    "id": "2ca21618-de98-40de-9005-5858b57811ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f00c1579-2e39-490a-9cac-0e27c05eade9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change Platform Oriantation Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73ed6c5e-9abf-4eb9-a169-ff5154c64120",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change Platform Oriantation Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b5f3925-72b3-4965-be18-7ebb02b3e87f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change Platform Oriantation Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94316503-e4ed-4446-b477-81230231f268",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Change Platform Oriantation Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,0 +1,4 @@
+Simple Idea we have AI agents running around a map that player controlls with tilting it around
+Player character is a ball that can be moved around by tilting the map 
+
+If AI agents see the player they follow the player around and it they touch the player game resets. 
