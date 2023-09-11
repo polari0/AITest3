@@ -38,7 +38,7 @@ public class AIBraiinsss : MonoBehaviour
         //if we see the player go to player if we don't pick random point in range and go there repeat 
         patrollTree = new BehaviorTreeBuilder(gameObject)
             .Selector()
-            .Sequence("Looking for Player")
+                .Sequence("Looking for Player")
                     .Condition("We don't see the player", () => !canSeePlayer)
                     .Do("Patrol around", () =>
                     {
@@ -59,29 +59,32 @@ public class AIBraiinsss : MonoBehaviour
                     .Do("set Player As target", () =>
                     {
                         targetCurrentPosition = target.transform.position;
-                        agent.SetDestination(targetPosition);
+                        agent.SetDestination(targetCurrentPosition);
                         return TaskStatus.Success;
                     })
                     .RepeatUntilSuccess()
-                    .Do("Go to the player", () =>
-                    {
-                        //so basically we check the players current position and move there if it happends to be same as the position player actually is in 
-                        //When we reach there then we end the game other wise we continue patrolling. 
-                        if (Vector3.Distance(agent.transform.position, targetCurrentPosition) <= 1f)
+                        .Do("Go to the player", () =>
                         {
-                            if (Vector3.Distance(agent.transform.position, targetPosition) <= 1f)
+                            //so basically we check the players current position and move there if it happends to be same as the position player actually is in 
+                            //When we reach there then we end the game other wise we continue patrolling. 
+                            if (Vector3.Distance(agent.transform.position, targetCurrentPosition) <= 5f)
                             {
-                                CapturePlayer();
-                                Debug.Log("We reached target");
+                                if (Vector3.Distance(agent.transform.position, targetPosition) <= 5f)
+                                {
+                                    //CapturePlayer();
+                                    Debug.Log("We reached target");
+                                    return TaskStatus.Success;
+                                }
+                                return TaskStatus.Success;
                             }
-                            return TaskStatus.Success;
-                        }
-                        else
-                            return TaskStatus.Failure;
-                    })
-                    .Do("Reset Path", () =>
+                            else
+                                return TaskStatus.Failure;
+                        })
+                    .End()
+                .Sequence("Reset Agent Path")
+                    .Do("Reset the path", () =>
                     {
-                        agent.SetDestination(_origin.transform.position);
+                        agent.ResetPath();
                         return TaskStatus.Success;
                     })
                 .End()
@@ -92,7 +95,7 @@ public class AIBraiinsss : MonoBehaviour
                         agent.SetDestination(_origin.transform.position);
                         return TaskStatus.Success;
                     })
-                    .End()
+                .End()
                 .Build();
     }
 
@@ -113,7 +116,7 @@ public class AIBraiinsss : MonoBehaviour
     /// </summary>
     private void CapturePlayer()
     {
-        GameManagerthingy.ResetScene();
+        //GameManagerthingy.ResetScene();
     }
 
 

@@ -15,7 +15,6 @@ public class LevelTiltManager : MonoBehaviour
     float smooth = 5f;
     float tiltAngle = 45.0f;
 
-    private Vector3 originRotation = new Vector3(0f, 0f,0f);
 
     private Quaternion newRoationAngel;
 
@@ -61,8 +60,11 @@ public class LevelTiltManager : MonoBehaviour
         level.transform.rotation = Quaternion.Slerp(transform.rotation, newRoationAngel, smooth);
     }
     #endregion
-
-    void Update()
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            level.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
